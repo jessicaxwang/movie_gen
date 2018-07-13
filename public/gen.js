@@ -1,6 +1,6 @@
 window.onload = function(){
     console.log("opened")
-    button_msg = ["Try again!", "Another!", "How about another, eh?", "Again!", "What to watch?", "So many choices!", "So…many…movies…"];
+    button_msg = ["Try again!", "Another!", "How about another, eh?", "Again!", "What to watch?", "So many choices!", "So...many...movies...", "OMG", "Yeet"];
     document.getElementById("button").onclick = function () {
       var data = "https://movie-gen.herokuapp.com/movies.json";
       var request = new XMLHttpRequest();
@@ -21,8 +21,10 @@ window.onload = function(){
         }
 
         if (parsed.hasOwnProperty('genres')) {
-          genre = document.getElementById("genre");
-          genre.innerHTML = parsed['genres'][0]['name'];
+          if (parsed['genres'].length > 0) {
+            genre = document.getElementById("genre");
+            genre.innerHTML = parsed['genres'][0]['name'];
+          }
         }
 
         if (parsed.hasOwnProperty('overview')) {
@@ -31,7 +33,6 @@ window.onload = function(){
         }
 
         button = document.getElementById("button");
-
         idx = Math.floor(Math.random() * (button_msg.length));
         button.innerHTML = button_msg[idx];
       }
