@@ -16,10 +16,10 @@ app.use(function(req, res, next) {
 app.use(express.static(__dirname + '/public'));
 
 app.get('/movies.json', function(req, res) {
-  console.log("IN SERVER");
   res.type('json');
-  rand_id = Math.floor(Math.random() * 373818);
-  url = "https://api.themoviedb.org/3/movie/" + rand_id + "?api_key=fbc86ba7bb6f223b981dface8ce52358";
+  rand_page = Math.floor(Math.random() * 1000);
+  url = "https://api.themoviedb.org/3/discover/movie?api_key=fbc86ba7bb6f223b981dface8ce52358&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&with_original_language=en&page=" + rand_page;
+
   /* Grab data from another website */
   request({
     url: url,
