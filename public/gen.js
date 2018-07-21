@@ -1,5 +1,5 @@
 window.onload = function(){
-    button_msg = ["Try again!", "Another!", "How about another, eh?", "Again!", "What to watch?", "So many choices!", "So many movies!", "Why not try one more time?", "Isn't this fun?", "One more time!", "Again! Again!", "Click me!"];
+    button_msg = ["Try again!", "Another!", "How about another, eh?", "Again!", "What to watch?", "So many choices!", "So many movies!", "Why not try one more time?", "Isn't this fun?", "One more time!", "Again! Again!", "Click me!", "Click here!"];
 
     document.getElementById("button").onclick = function () {
       var data = "https://movie-gen.herokuapp.com/movies.json";
